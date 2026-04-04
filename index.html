@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer Portfolio</title>
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: rgba(17, 26, 43, 0.72);
+      --panel: rgba(255, 255, 255, 0.08);
+      --panel-strong: rgba(255, 255, 255, 0.12);
+      --line: rgba(255, 255, 255, 0.12);
+      --text: #eef4ff;
+      --muted: #a7b4c9;
+      --accent: #67e8f9;
+      --accent-2: #8b5cf6;
+      --accent-3: #22c55e;
+      --shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(103, 232, 249, 0.18), transparent 35%),
+        radial-gradient(circle at 80% 10%, rgba(139, 92, 246, 0.16), transparent 30%),
+        linear-gradient(135deg, #02060d 0%, #07111f 45%, #0c1730 100%);
+      min-height: 100vh;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent 80%);
+      pointer-events: none;
+      z-index: -2;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 2vw + 1rem, 2.8rem);
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      max-width: 700px;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+
+    .glass {
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding-top: 18px;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 20px;
+      border-radius: 999px;
+    }
+
+    .brand {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      transition: color 0.25s ease, transform 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      padding: 90px 0 70px;
+      min-height: calc(100vh - 90px);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      margin-bottom: 24px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #d8f7ff;
+      font-size: 0.92rem;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 18px rgba(103, 232, 249, 0.7);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 5vw, 5.4rem);
+      line-height: 1.02;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, #ffffff 15%, var(--accent) 50%, #c4b5fd 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 600;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      color: #06111d;
+      background: linear-gradient(135deg, var(--accent), #a5f3fc);
+      box-shadow: 0 12px 30px rgba(103, 232, 249, 0.28);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      border-color: rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .btn-card {
+      width: 100%;
+      margin-top: auto;
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.14);
+      color: var(--text);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-card {
+      position: relative;
+      padding: 28px;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -50px -50px auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.35), transparent 70%);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat {
+      padding: 18px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .about-card,
+    .publish-card,
+    .contact-card {
+      border-radius: var(--radius);
+      padding: 30px;
+    }
+
+    .about-text {
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(103, 232, 249, 0.35);
+    }
+
+    .project-image {
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .project-card:hover .project-image img {
+      transform: scale(1.05);
+    }
+
+    .project-content {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 22px;
+      height: 100%;
+    }
+
+    .project-content p {
+      color: var(--muted);
+      flex-grow: 1;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tech-list span {
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #d9e6fb;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .skill-card {
+      padding: 24px;
+      border-radius: var(--radius);
+    }
+
+    .skill-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .skill-name {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+    }
+
+    .skill-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: inline-grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(103, 232, 249, 0.16), rgba(139, 92, 246, 0.18));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 1rem;
+    }
+
+    .progress {
+      width: 100%;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+    }
+
+    .progress span {
+      display: block;
+      height: 100%;
+      width: var(--width);
+      border-radius: inherit;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 18px rgba(103, 232, 249, 0.28);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+    }
+
+    .contact-info p,
+    .publish-card p,
+    .publish-card li {
+      color: var(--muted);
+    }
+
+    .contact-list {
+      margin-top: 20px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-list a,
+    .contact-list span {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #dce8fb;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      padding: 14px 16px;
+      border-radius: 16px;
+      outline: none;
+      transition: border-color 0.25s ease, transform 0.25s ease;
+      font: inherit;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: rgba(103, 232, 249, 0.45);
+      transform: translateY(-1px);
+    }
+
+    .contact-form textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .publish-card ol {
+      padding-left: 20px;
+      display: grid;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    footer {
+      padding: 30px 0 50px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .contact-grid,
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .navbar {
+        border-radius: 26px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .section {
+        padding: 82px 0;
+      }
+
+      .nav-wrap {
+        padding-top: 12px;
+      }
+
+      .navbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .hero {
+        padding-top: 60px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.3rem, 11vw, 3.8rem);
+      }
+
+      .hero-card,
+      .about-card,
+      .publish-card,
+      .contact-card,
+      .skill-card {
+        padding: 22px;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!--
+    ==========================================================
+    EASY EDIT AREA - CHANGE YOUR MAIN TEXT/DETAILS BELOW
+    1. Update your name, title, intro, and links in the HERO section.
+    2. Replace project titles, descriptions, tech, and GitHub links in PROJECTS.
+    3. Replace image URLs in each <img src="..."> with your own images.
+    4. Update skills, percentages, contact info, and footer text as needed.
+    ==========================================================
+  -->
+
+  <div class="nav-wrap">
+    <div class="container">
+      <nav class="navbar glass">
+        <a href="#home" class="brand">My Portfolio</a>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+          <a href="#publish">Publish</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <header id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <!-- EDIT: Small intro label -->
+        <div class="eyebrow">Open to internships and tech collaborations</div>
+
+        <!-- EDIT: Your name and title here -->
+        <h1>Hi, I'm <span>Your Name</span><br />EEE + CSE Student & Developer</h1>
+
+        <!-- EDIT: Short intro paragraph -->
+        <p>
+          I build thoughtful digital experiences and hardware-focused solutions with a strong interest in
+          robotics, embedded systems, automation, and problem-solving through clean engineering design.
+        </p>
+
+        <!-- EDIT: Change button links if needed -->
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-secondary" href="#contact">Contact Me</a>
+        </div>
+      </div>
+
+      <div class="hero-card glass reveal">
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>4+</strong>
+            <span>Featured projects</span>
+          </div>
+          <div class="stat">
+            <strong>EEE + CSE</strong>
+            <span>Academic focus</span>
+          </div>
+          <div class="stat">
+            <strong>Robotics</strong>
+            <span>Core area of interest</span>
+          </div>
+          <div class="stat">
+            <strong>Embedded</strong>
+            <span>Systems and hardware passion</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="section">
+      <div class="container">
+        <div class="about-card glass reveal">
+          <h2 class="section-title">About Me</h2>
+          <p class="about-text">
+            <!-- EDIT: About Me text -->
+            I am an Electrical and Electronics Engineering student with interests that also extend into Computer
+            Science. I enjoy exploring robotics, embedded systems, intelligent devices, and real-world engineering
+            problems. My goal is to combine software logic with hardware thinking to build efficient, useful, and
+            future-ready solutions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Projects</h2>
+        <p class="section-subtitle reveal">
+          A few sample projects are included below. Replace the text, images, and GitHub links with your real work.
+        </p>
+
+        <div class="projects-grid">
+          <!-- PROJECT CARD 1 - EDIT title, image, description, tech and GitHub link -->
+          <article class="project-card glass reveal">
+            <div class="project-image">
+              <!-- CHANGE IMAGE: Replace the src link below with your own project image -->
+              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Project 1 placeholder" />
+            </div>
+            <div class="project-content">
+              <h3>Smart Home Automation System</h3>
+              <p>
+                An IoT-based automation setup for controlling lights, appliances, and sensors with a compact dashboard
+                and efficient microcontroller logic.
+              </p>
+              <div class="tech-list">
+                <span>Arduino</span>
+                <span>IoT</span>
+                <span>Embedded C</span>
+              </div>
+              <a class="btn btn-card" href="https://github.com/" target="_blank" rel="noreferrer">GitHub Link</a>
+            </div>
+          </article>
+
+          <!-- PROJECT CARD 2 -->
+          <article class="project-card glass reveal">
+            <div class="project-image">
+              <!-- CHANGE IMAGE: Replace the src link below -->
+              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Project 2 placeholder" />
+            </div>
+            <div class="project-content">
+              <h3>Line Following Robot</h3>
+              <p>
+                A compact robotic vehicle designed to detect and track a path accurately using sensors, motor drivers,
+                and optimized control logic.
+              </p>
+              <div class="tech-list">
+                <span>Robotics</span>
+                <span>Sensors</span>
+                <span>Microcontrollers</span>
+              </div>
+              <a class="btn btn-card" href="https://github.com/" target="_blank" rel="noreferrer">GitHub Link</a>
+            </div>
+          </article>
+
+          <!-- PROJECT CARD 3 -->
+          <article class="project-card glass reveal">
+            <div class="project-image">
+              <!-- CHANGE IMAGE: Replace the src link below -->
+              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Project 3 placeholder" />
+            </div>
+            <div class="project-content">
+              <h3>Portfolio Website Design</h3>
+              <p>
+                A polished and responsive portfolio website showcasing projects, skills, and contact details using a
+                modern single-page layout.
+              </p>
+              <div class="tech-list">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+              <a class="btn btn-card" href="https://github.com/" target="_blank" rel="noreferrer">GitHub Link</a>
+            </div>
+          </article>
+
+          <!-- PROJECT CARD 4 -->
+          <article class="project-card glass reveal">
+            <div class="project-image">
+              <!-- CHANGE IMAGE: Replace the src link below -->
+              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80" alt="Project 4 placeholder" />
+            </div>
+            <div class="project-content">
+              <h3>Embedded Monitoring Dashboard</h3>
+              <p>
+                A system concept for reading hardware sensor values and visualizing them through a clear interface for
+                monitoring device status in real time.
+              </p>
+              <div class="tech-list">
+                <span>ESP32</span>
+                <span>Dashboard UI</span>
+                <span>Data Visualization</span>
+              </div>
+              <a class="btn btn-card" href="https://github.com/" target="_blank" rel="noreferrer">GitHub Link</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Skills</h2>
+        <p class="section-subtitle reveal">
+          You can easily rename these skills and adjust the progress values to match your actual level.
+        </p>
+
+        <div class="skills-grid">
+          <div class="skill-card glass reveal">
+            <div class="skill-row">
+              <div class="skill-name"><span class="skill-icon">💻</span> HTML / CSS</div>
+              <span>90%</span>
+            </div>
+            <div class="progress" style="--width: 90%;"><span></span></div>
+          </div>
+
+          <div class="skill-card glass reveal">
+            <div class="skill-row">
+              <div class="skill-name"><span class="skill-icon">⚙</span> Embedded Systems</div>
+              <span>85%</span>
+            </div>
+            <div class="progress" style="--width: 85%;"><span></span></div>
+          </div>
+
+          <div class="skill-card glass reveal">
+            <div class="skill-row">
+              <div class="skill-name"><span class="skill-icon">🤖</span> Robotics</div>
+              <span>80%</span>
+            </div>
+            <div class="progress" style="--width: 80%;"><span></span></div>
+          </div>
+
+          <div class="skill-card glass reveal">
+            <div class="skill-row">
+              <div class="skill-name"><span class="skill-icon">⌨</span> C / JavaScript</div>
+              <span>75%</span>
+            </div>
+            <div class="progress" style="--width: 75%;"><span></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-card glass contact-info reveal">
+            <h2 class="section-title">Contact</h2>
+            <p>
+              <!-- EDIT: Update email, phone, LinkedIn, GitHub, or remove anything you do not need -->
+              If you would like to collaborate, discuss projects, or connect for internships and opportunities, feel
+              free to reach out.
+            </p>
+            <div class="contact-list">
+              <a href="mailto:yourname@example.com">yourname@example.com</a>
+              <span>+91 98765 43210</span>
+              <a href="https://github.com/" target="_blank" rel="noreferrer">github.com/yourusername</a>
+              <a href="https://linkedin.com/" target="_blank" rel="noreferrer">linkedin.com/in/yourprofile</a>
+            </div>
+          </div>
+
+          <div class="contact-card glass reveal">
+            <form class="contact-form">
+              <!-- Simple form layout for display. You can later connect this to a backend/service if needed. -->
+              <input type="text" placeholder="Your Name" />
+              <input type="email" placeholder="Your Email" />
+              <textarea placeholder="Your Message"></textarea>
+              <button type="button" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publish" class="section">
+      <div class="container">
+        <div class="publish-card glass reveal">
+          <h2 class="section-title">PUBLISH FREE (STEP-BY-STEP)</h2>
+          <p>✅ METHOD 1: GitHub Pages (BEST)</p>
+          <ol>
+            <li>Step 1: Go to 👉 <a href="https://github.com" target="_blank" rel="noreferrer">https://github.com</a></li>
+            <li>Step 2: Create new repo. Name: <strong>portfolio</strong></li>
+            <li>Step 3: Upload file. Upload <strong>index.html</strong></li>
+            <li>Step 4: Enable hosting. Go to <strong>Settings → Pages</strong></li>
+            <li>Source: <strong>main branch</strong></li>
+            <li>Click <strong>Save</strong></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <!-- EDIT: Footer text -->
+      <p>© 2026 Your Name. Built with HTML, CSS, and JavaScript.</p>
+    </div>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll("section[id], header[id]");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    const setActiveLink = () => {
+      const scrollY = window.pageYOffset;
+
+      sections.forEach((section) => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 140;
+        const sectionId = section.getAttribute("id");
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          navLinks.forEach((link) => link.classList.remove("active"));
+          const activeLink = document.querySelector('.nav-links a[href="#' + sectionId + '"]');
+          if (activeLink) activeLink.classList.add("active");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", setActiveLink);
+    setActiveLink();
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    document.querySelectorAll(".reveal").forEach((item) => observer.observe(item));
+  </script>
+</body>
+</html>
