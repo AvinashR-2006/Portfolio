@@ -423,6 +423,52 @@
       gap: 24px;
     }
 
+    .achievement-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .achievement-item {
+      padding: 20px 22px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      transition: 0.25s ease;
+    }
+
+    .achievement-item:hover {
+      transform: translateY(-4px);
+      border-color: rgba(125, 211, 252, 0.28);
+      box-shadow: var(--glow);
+    }
+
+    .achievement-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .activity-card {
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(10, 16, 33, 0.82));
+      transition: 0.35s ease;
+    }
+
+    .activity-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(125, 211, 252, 0.28);
+      box-shadow: var(--glow);
+    }
+
     .education-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -587,6 +633,7 @@
       .projects-grid,
       .skills-grid,
       .contact-grid,
+      .activities-grid,
       .education-grid {
         grid-template-columns: 1fr;
       }
@@ -656,8 +703,10 @@
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#education">Education</a>
+          <a href="#achievements">Achievements</a>
           <a href="#projects">Projects</a>
           <a href="#skills">Skills</a>
+          <a href="#activities">Activities</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
@@ -684,7 +733,7 @@
         <div class="actions">
           <a class="btn btn-primary" href="#projects">View Projects</a>
           <!-- EDIT: Replace resume.pdf with your actual resume file -->
-          <a class="btn btn-secondary" href="resume.pdf" target="_blank" rel="noreferrer">
+          <a class="btn btn-secondary" href="avinash_resume.pdf" target="_blank" rel="noreferrer">
             Download Resume
           </a>
         </div>
@@ -785,81 +834,48 @@
         </div>
       </div>
     </section>
-    <section id="projects" class="section">
+
+    <section id="achievements" class="section">
       <div class="container">
         <div class="section-head reveal">
-          <div class="kicker">Featured Projects</div>
-          <h2 class="section-title">Engineering builds that move from idea to execution</h2>
+          <div class="kicker">Achievements</div>
+          <h2 class="section-title">Competition wins and recognitions</h2>
           <p class="section-subtitle">
-            High-quality placeholder images are used for now. Replace each image with your actual project
-            photo for the strongest final result.
+            Competitive robotics experiences that reflect strong execution, problem-solving, and consistency under pressure.
           </p>
         </div>
 
-        <div class="featured-grid">
-          <article class="featured-card glass reveal">
-            <div class="card-image">
-              <!-- Replace this image with your real project photo -->
-              <img src="https://via.placeholder.com/600x400?text=Foldable+Electric+Scooter" alt="Foldable Electric Scooter" />
-            </div>
-            <div class="card-body">
-              <h3>Foldable Electric Scooter</h3>
-              <p>
-                Designed and developed a compact foldable electric scooter with motor control, structural
-                integration, and multi-mode acceleration for a practical mobility-focused build.
-              </p>
-              <div class="badge-row">
-                <span class="badge">Motor Control</span>
-                <span class="badge">Product Design</span>
-                <span class="badge">Mechanical Build</span>
-              </div>
-            </div>
+        <div class="achievement-list">
+          <article class="achievement-item glass reveal">
+            <strong>1st Prize - Line Follower Robot</strong>
+            IIT Madras RoboRun
           </article>
 
-          <article class="featured-card glass reveal">
-            <div class="card-image">
-              <!-- Replace this image with your real project photo -->
-              <img src="https://via.placeholder.com/600x400?text=Maze+Solver+Robot" alt="Maze Solver Robot" />
-            </div>
-            <div class="card-body">
-              <h3>Maze Solver Robot</h3>
-              <p>
-                Engineered an autonomous maze-solving robot using the flood fill algorithm to compute efficient
-                paths and navigate complex layouts with reliable decision-making.
-              </p>
-              <div class="badge-row">
-                <span class="badge">Flood Fill</span>
-                <span class="badge">Autonomous Navigation</span>
-                <span class="badge">Robotics</span>
-              </div>
-            </div>
+          <article class="achievement-item glass reveal">
+            <strong>1st Prize - Line Follower Robot</strong>
+            CEG Kurukshetra
           </article>
 
-          <article class="featured-card glass reveal">
-            <div class="card-image">
-              <!-- Replace this image with your real project photo -->
-              <img src="https://via.placeholder.com/600x400?text=Line+Follower+Robot" alt="Line Follower Robot" />
-            </div>
-            <div class="card-body">
-              <h3>Line Follower Robot</h3>
-              <p>
-                Engineered an autonomous line-following robot using ESP32, IR sensors, and PID control to
-                achieve stable, high-precision path tracking on dynamic routes.
-              </p>
-              <div class="badge-row">
-                <span class="badge">ESP32</span>
-                <span class="badge">IR Sensors</span>
-                <span class="badge">PID Control</span>
-              </div>
-            </div>
+          <article class="achievement-item glass reveal">
+            <strong>2nd Prize - Maze Navigator</strong>
+            REC Tittanium
+          </article>
+
+          <article class="achievement-item glass reveal">
+            <strong>Cleared Stage 2 - E-Yantra Robotics Competition</strong>
+            IIT Bombay
           </article>
         </div>
+      </div>
+    </section>
 
+    <section id="projects" class="section">
+      <div class="container">
         <div class="section-head reveal">
-          <div class="kicker">All Projects</div>
+          <div class="kicker">Projects</div>
           <h2 class="section-title">Project Showcase</h2>
           <p class="section-subtitle">
-            Beautiful cards, consistent spacing, image hover zoom, and editable content in one file.
+            A selection of robotics, embedded, electronics, PCB, and product design projects built through hands-on engineering.
           </p>
         </div>
 
@@ -867,7 +883,7 @@
           <article class="project-card glass reveal">
             <div class="card-image">
               <!-- Replace this image with your real project photo -->
-              <img src="https://via.placeholder.com/600x400?text=Line+Follower+Robot" alt="Line Follower Robot" />
+              <img src="line-follower-robot.jpeg" alt="Line Follower Robot" />
             </div>
             <div class="card-body">
               <h3>Line Follower Robot</h3>
@@ -887,7 +903,7 @@
           <article class="project-card glass reveal">
             <div class="card-image">
               <!-- Replace this image with your real project photo -->
-              <img src="https://via.placeholder.com/600x400?text=Maze+Solver+Robot" alt="Maze Solver Robot" />
+              <img src="maze-solver-robot.jpeg" alt="Maze Solver Robot" />
             </div>
             <div class="card-body">
               <h3>Maze Solver Robot</h3>
@@ -907,7 +923,7 @@
           <article class="project-card glass reveal">
             <div class="card-image">
               <!-- Replace this image with your real project photo -->
-              <img src="https://via.placeholder.com/600x400?text=Foldable+Electric+Scooter" alt="Foldable Electric Scooter" />
+              <img src="foldable-electric-scooter.jpeg" alt="Foldable Electric Scooter" />
             </div>
             <div class="card-body">
               <h3>Foldable Electric Scooter</h3>
@@ -927,7 +943,7 @@
           <article class="project-card glass reveal">
             <div class="card-image">
               <!-- Replace this image with your real project photo -->
-              <img src="https://via.placeholder.com/600x400?text=Voice+Controlled+Wheeler" alt="Voice Controlled 3-Way Segmented Wheeler" />
+              <img src="voice-controlled-wheeler.jpeg" alt="Voice Controlled 3-Way Segmented Wheeler" />
             </div>
             <div class="card-body">
               <h3>Voice Controlled 3-Way Segmented Wheeler</h3>
@@ -947,7 +963,7 @@
           <article class="project-card glass reveal">
             <div class="card-image">
               <!-- Replace this image with your real project photo -->
-              <img src="https://via.placeholder.com/600x400?text=Volume+Level+Indicator" alt="Volume Level Indicator" />
+              <img src="volume-level-indicator.jpeg" alt="Volume Level Indicator" />
             </div>
             <div class="card-body">
               <h3>Volume Level Indicator</h3>
@@ -967,7 +983,7 @@
           <article class="project-card glass reveal">
             <div class="card-image">
               <!-- Replace this image with your real project photo -->
-              <img src="https://via.placeholder.com/600x400?text=Smart+Home+Pass+System" alt="Smart Home Pass System" />
+              <img src="home-pass-system.png" alt="Smart Home Pass System" />
             </div>
             <div class="card-body">
               <h3>Smart Home Pass System</h3>
@@ -987,7 +1003,7 @@
           <article class="project-card glass reveal">
             <div class="card-image">
               <!-- Replace this image with your real project photo -->
-              <img src="https://via.placeholder.com/600x400?text=Home+Automation+System" alt="Home Automation System" />
+              <img src="home-automation-system.jpeg" alt="Home Automation System" />
             </div>
             <div class="card-body">
               <h3>Home Automation System</h3>
@@ -1007,7 +1023,7 @@
           <article class="project-card glass reveal">
             <div class="card-image">
               <!-- Replace this image with your real project photo -->
-              <img src="https://via.placeholder.com/600x400?text=Water+Level+Indicator" alt="Water Level Indicator" />
+              <img src="water-level-indicator.jpeg" alt="Water Level Indicator" />
             </div>
             <div class="card-body">
               <h3>Water Level Indicator (BJT Based)</h3>
@@ -1027,7 +1043,7 @@
           <article class="project-card glass reveal">
             <div class="card-image">
               <!-- Replace this image with your real project photo -->
-              <img src="https://via.placeholder.com/600x400?text=E-Yantra+Crop+Drop+Bot" alt="E-Yantra Crop Drop Bot" />
+              <img src="e-yantra-crop-drop-bot.jpeg" alt="E-Yantra Crop Drop Bot" />
             </div>
             <div class="card-body">
               <h3>E-Yantra Crop Drop Bot</h3>
@@ -1046,19 +1062,18 @@
 
           <article class="project-card glass reveal">
             <div class="card-image">
-              <!-- Replace this image with your real project photo -->
-              <img src="https://via.placeholder.com/600x400?text=Pharma+Website" alt="Pharma Website" />
+              <img src="mini-drone-3d-design.png" alt="Mini Drone 3D Design" />
             </div>
             <div class="card-body">
-              <h3>Pharma Website</h3>
+              <h3>Mini Drone 3D Design</h3>
               <p>
-                Designed and developed a clean, professional website for a pharmaceutical company with a
-                strong focus on clarity, trust, and modern presentation.
+                Designed a lightweight mini drone frame with tapered ends and an aerodynamic form, keeping
+                the total weight under half of the available thrust for better lift efficiency and stability.
               </p>
               <div class="badge-row">
-                <span class="badge">Web Design</span>
-                <span class="badge">HTML</span>
-                <span class="badge">CSS</span>
+                <span class="badge">Fusion 360</span>
+                <span class="badge">Aerodynamics</span>
+                <span class="badge">3D Design</span>
               </div>
               <a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a>
             </div>
@@ -1066,19 +1081,18 @@
 
           <article class="project-card glass reveal">
             <div class="card-image">
-              <!-- Replace this image with your real project photo -->
-              <img src="https://via.placeholder.com/600x400?text=Smart+Fire+Exit+System" alt="Smart Fire Exit Evacuation System" />
+              <img src="all-in-one-pcb.jpeg" alt="All In One PCB" />
             </div>
             <div class="card-body">
-              <h3>Smart Fire Exit Evacuation System</h3>
+              <h3>All In One PCB</h3>
               <p>
-                Conceptualized a system to guide people safely during emergencies by improving fire exit
-                response and enabling more informed evacuation support.
+                Designed a versatile KiCad PCB platform for multiple car bots including line follower, maze
+                solver, self-balancing, Wi-Fi controlled, and Bluetooth controlled robots in a single board design.
               </p>
               <div class="badge-row">
-                <span class="badge">Safety System</span>
-                <span class="badge">Embedded Concepts</span>
-                <span class="badge">Emergency Guidance</span>
+                <span class="badge">KiCad</span>
+                <span class="badge">PCB Design</span>
+                <span class="badge">Robot Platform</span>
               </div>
               <a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a>
             </div>
@@ -1163,6 +1177,127 @@
       </div>
     </section>
 
+    <section id="activities" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="kicker">Clubs & Activities</div>
+          <h2 class="section-title">Leadership, volunteering, and campus involvement</h2>
+          <p class="section-subtitle">
+            Beyond technical work, I actively contribute to student chapters, large-scale events, conferences, and performance culture.
+          </p>
+        </div>
+
+        <div class="activities-grid">
+          <article class="activity-card glass reveal">
+            <div class="card-image">
+              <img src="ieee-pels.png" alt="IEEE PELS" />
+            </div>
+            <div class="card-body">
+              <h3>IEEE PELS</h3>
+              <p>
+                Event Management member of IEEE PELS, supporting planning, coordination, and smooth execution of technical and chapter activities.
+              </p>
+              <div class="badge-row">
+                <span class="badge">Event Management</span>
+                <span class="badge">IEEE</span>
+                <span class="badge">PELS</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="activity-card glass reveal">
+            <div class="card-image">
+              <img src="ieee-pes.jpeg" alt="IEEE PES" />
+            </div>
+            <div class="card-body">
+              <h3>IEEE PES</h3>
+              <p>
+                Event Management member of IEEE PES, involved in organizing sessions, technical events, and student engagement activities.
+              </p>
+              <div class="badge-row">
+                <span class="badge">Event Management</span>
+                <span class="badge">IEEE</span>
+                <span class="badge">PES</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="activity-card glass reveal">
+            <div class="card-body">
+              <h3>Instincts - Cultural Fest</h3>
+              <p>
+                Assistant Coordinator of Instincts, the cultural fest of SSN College of Engineering, serving in the core team as a second-year student.
+              </p>
+              <div class="badge-row">
+                <span class="badge">Assistant Coordinator</span>
+                <span class="badge">Core Team</span>
+                <span class="badge">Fest Management</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="activity-card glass reveal">
+            <div class="card-body">
+              <h3>INVENTE - Technical Fest</h3>
+              <p>
+                Served as Sponsorship Head for INVENTE, contributing to outreach, partnerships, and execution for one of the college's major technical events.
+              </p>
+              <div class="badge-row">
+                <span class="badge">Sponsorship Head</span>
+                <span class="badge">Technical Fest</span>
+                <span class="badge">Leadership</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="activity-card glass reveal">
+            <div class="card-body">
+              <h3>IEEE & International Conferences</h3>
+              <p>
+                Volunteered in multiple IEEE events and international conferences, supporting event operations, coordination, and participant experience.
+              </p>
+              <div class="badge-row">
+                <span class="badge">Volunteer</span>
+                <span class="badge">Conferences</span>
+                <span class="badge">Coordination</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="activity-card glass reveal">
+            <div class="card-image">
+              <img src="build-club-ssn.jpg" alt="Build Club SSN" />
+            </div>
+            <div class="card-body">
+              <h3>Build Club, SSN</h3>
+              <p>
+                Part of the project team in Build Club, SSN, contributing to hands-on engineering builds, collaborative development, and practical innovation-focused work.
+              </p>
+              <div class="badge-row">
+                <span class="badge">Project Team</span>
+                <span class="badge">Build Club</span>
+                <span class="badge">SSN</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="activity-card glass reveal">
+            <div class="card-body">
+              <h3>N2K Dance Club</h3>
+              <p>
+                Active dancer in the N2K dance club of the college, taking part in multiple performances and creative stage events.
+              </p>
+              <div class="badge-row">
+                <span class="badge">Dance</span>
+                <span class="badge">Performances</span>
+                <span class="badge">Cultural Activities</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="contact" class="section">
       <div class="container">
         <div class="section-head reveal">
@@ -1177,20 +1312,24 @@
           <div class="contact-card glass reveal">
             <div class="contact-list">
               <a class="contact-item" href="mailto:avinash2410032@ssn.edu.in">
-                <span class="contact-icon">✉</span>
+                <span class="contact-icon">Mail</span>
                 <span>avinash2410032@ssn.edu.in</span>
               </a>
               <a class="contact-item" href="tel:9150864113">
-                <span class="contact-icon">☎</span>
+                <span class="contact-icon">Call</span>
                 <span>9150864113</span>
               </a>
               <a class="contact-item" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">
-                <span class="contact-icon">⌘</span>
+                <span class="contact-icon">Git</span>
                 <span>github.com/AvinashR-2006</span>
               </a>
               <a class="contact-item" href="https://www.linkedin.com/in/avinashey" target="_blank" rel="noreferrer">
-                <span class="contact-icon">in</span>
+                <span class="contact-icon">In</span>
                 <span>linkedin.com/in/avinashey</span>
+              </a>
+              <a class="contact-item" href="https://instagram.com/avi_nashey" target="_blank" rel="noreferrer">
+                <span class="contact-icon">IG</span>
+                <span>instagram.com/avi_nashey</span>
               </a>
             </div>
           </div>
