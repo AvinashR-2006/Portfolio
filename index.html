@@ -1,26 +1,640 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Avinash R portfolio - EEE Undergraduate, Robotics and Embedded Systems Developer" />
+  <meta
+    name="description"
+    content="Avinash R portfolio - EEE Undergraduate, Robotics and Embedded Systems Developer"
+  />
   <title>Avinash R | Portfolio</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
-    :root{--bg:#050816;--panel:rgba(11,18,35,.72);--card:rgba(255,255,255,.07);--line:rgba(255,255,255,.12);--text:#f5f8ff;--muted:#a9b7d0;--accent:#7dd3fc;--accent2:#a78bfa;--shadow:0 24px 60px rgba(0,0,0,.34);--glow:0 0 24px rgba(125,211,252,.22);--r:26px;--rs:16px;--w:1180px}
-    *{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth} body{font-family:"Inter",sans-serif;color:var(--text);background:radial-gradient(circle at 15% 15%,rgba(125,211,252,.16),transparent 24%),radial-gradient(circle at 85% 10%,rgba(167,139,250,.18),transparent 22%),linear-gradient(135deg,#02040c 0%,#060c1d 45%,#0c1631 100%);min-height:100vh;line-height:1.65;overflow-x:hidden} body::before,body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1} body::before{background:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.55),transparent 85%)} body::after{background:radial-gradient(circle at 20% 20%,rgba(125,211,252,.12),transparent 20%),radial-gradient(circle at 80% 20%,rgba(167,139,250,.12),transparent 20%);filter:blur(42px);animation:floatBg 14s ease-in-out infinite alternate}
-    @keyframes floatBg{from{transform:translateY(0) scale(1)}to{transform:translateY(-18px) scale(1.04)}}
-    a{text-decoration:none;color:inherit} img{display:block;max-width:100%} .container{width:min(calc(100% - 2rem),var(--w));margin:0 auto} .section{padding:92px 0}.glass{background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)} .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
-    .nav-shell{position:sticky;top:0;z-index:1000;padding-top:18px}.navbar{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:14px 20px;border-radius:999px}.brand{font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.95rem}.nav-links{display:flex;flex-wrap:wrap;gap:18px}.nav-links a{color:var(--muted);position:relative;transition:.25s}.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:100%;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);transform-origin:left;transition:.25s}.nav-links a:hover,.nav-links a.active{color:var(--text);transform:translateY(-1px)}.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
-    .hero{min-height:calc(100vh - 100px);display:flex;align-items:center;padding:86px 0 60px}.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:32px;align-items:center}.eyebrow,.kicker{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:#dcf6ff;font-size:.92rem}.eyebrow{margin-bottom:22px}.kicker{margin-bottom:16px}.eyebrow::before,.kicker::before{content:"";width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:var(--glow)} .hero-name{font-size:clamp(3.2rem,7vw,6.2rem);line-height:.95;letter-spacing:-.06em;margin-bottom:12px}.hero-name span{background:linear-gradient(135deg,#fff 10%,var(--accent) 45%,#d8b4fe 100%);-webkit-background-clip:text;background-clip:text;color:transparent}.hero-title{font-size:1.12rem;font-weight:600;margin-bottom:10px}.typing-line{min-height:34px;color:var(--accent);font-weight:700;margin-bottom:16px}.hero p{color:var(--muted);max-width:650px}.hero-tagline{margin-bottom:10px}.hero-desc{margin-bottom:28px}.actions{display:flex;flex-wrap:wrap;gap:14px}.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:999px;border:1px solid transparent;font-weight:700;cursor:pointer;transition:.25s}.btn::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(255,255,255,.18),transparent);transform:translateX(-120%);transition:.5s}.btn:hover::before{transform:translateX(120%)}.btn:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(0,0,0,.26)}.btn-primary{color:#05101c;background:linear-gradient(135deg,var(--accent),#d9f6ff)}.btn-secondary,.btn-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}
-    .hero-panel,.about-card,.feature-banner,.edu-card,.skill-group,.project-card,.featured-card,.contact-card{border-radius:var(--r);border:1px solid var(--line)} .hero-panel{padding:28px;overflow:hidden}.hero-panel::before{content:"";position:absolute}.hero-panel-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.stat,.mini{padding:18px;border-radius:var(--rs);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);transition:.3s}.stat:hover,.mini:hover,.project-card:hover,.featured-card:hover,.contact-item:hover{transform:translateY(-4px);border-color:rgba(125,211,252,.28);box-shadow:var(--glow)} .stat strong{display:block;font-size:1.7rem;margin-bottom:6px}.stat span,.mini span,.section-sub,.about-card p,.edu-card p,.card-body p,.contact-card p,.contact-note li{color:var(--muted)} .mini strong{display:block;font-size:.95rem;margin-bottom:8px}.panel-stack{display:grid;gap:16px;margin-top:16px}
-    .section-head{margin-bottom:36px}.section-title{font-size:clamp(2rem,2.4vw + 1rem,3.1rem);line-height:1.06;margin-bottom:12px;letter-spacing:-.03em}.section-sub{max-width:760px}.about-card,.feature-banner,.contact-card,.skill-group,.edu-card{padding:30px}.education-grid,.featured-grid,.projects-grid,.skills-grid,.contact-grid{display:grid;gap:24px}.education-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.featured-grid{grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:28px}.projects-grid,.skills-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contact-grid{grid-template-columns:.95fr 1.05fr}
-    .featured-card,.project-card{overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(10,16,33,.82));transition:.35s}.card-image{aspect-ratio:16/10;overflow:hidden;background:#0d1529;position:relative}.card-image::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(4,8,18,.42),transparent 58%)}.card-image img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}.featured-card:hover .card-image img,.project-card:hover .card-image img{transform:scale(1.08)} .card-body{display:flex;flex-direction:column;gap:14px;padding:22px;height:100%}.badge-row,.skill-pills,.contact-list{display:flex;flex-wrap:wrap;gap:10px}.badge,.skill-pills span{padding:8px 12px;border-radius:999px;font-size:.88rem;color:#def3ff;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}.btn-card{width:100%;margin-top:auto;color:var(--text)}
-    .skill-group h3{margin-bottom:16px;font-size:1.15rem}.skill-group h3 span{color:var(--accent);margin-right:10px}.contact-list{display:grid;gap:14px;margin-top:4px}.contact-item{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:var(--rs);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);transition:.25s}.contact-icon{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(125,211,252,.2),rgba(167,139,250,.22));border:1px solid rgba(255,255,255,.1);flex-shrink:0}.contact-note{display:grid;gap:16px}.contact-note strong{font-size:1.15rem}.contact-note ul{list-style:none;display:grid;gap:12px}.contact-note li{padding-left:18px;position:relative}.contact-note li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2))} footer{padding:26px 0 52px;text-align:center;color:var(--muted)}
-    @media (max-width:1060px){.hero-grid,.featured-grid,.projects-grid,.skills-grid,.contact-grid,.education-grid{grid-template-columns:1fr}}
-    @media (max-width:760px){.section{padding:78px 0}.nav-shell{padding-top:12px}.navbar{flex-direction:column;align-items:flex-start;border-radius:28px}.nav-links{gap:12px}.hero{min-height:auto;padding-top:66px}.hero-name{font-size:clamp(2.8rem,15vw,4.2rem)}.hero-panel,.about-card,.feature-banner,.contact-card,.skill-group,.edu-card,.card-body{padding-left:20px;padding-right:20px}.hero-panel-grid{grid-template-columns:1fr}}
+    :root {
+      --bg: #050816;
+      --panel: rgba(11, 18, 35, 0.72);
+      --card: rgba(255, 255, 255, 0.07);
+      --line: rgba(255, 255, 255, 0.12);
+      --text: #f5f8ff;
+      --muted: #a9b7d0;
+      --accent: #7dd3fc;
+      --accent-2: #a78bfa;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
+      --glow: 0 0 24px rgba(125, 211, 252, 0.22);
+      --radius: 26px;
+      --radius-sm: 16px;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 15%, rgba(125, 211, 252, 0.16), transparent 24%),
+        radial-gradient(circle at 85% 10%, rgba(167, 139, 250, 0.18), transparent 22%),
+        linear-gradient(135deg, #02040c 0%, #060c1d 45%, #0c1631 100%);
+      min-height: 100vh;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    body::before {
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), transparent 85%);
+    }
+
+    body::after {
+      background:
+        radial-gradient(circle at 20% 20%, rgba(125, 211, 252, 0.12), transparent 20%),
+        radial-gradient(circle at 80% 20%, rgba(167, 139, 250, 0.12), transparent 20%);
+      filter: blur(42px);
+      animation: floatBackground 14s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatBackground {
+      from {
+        transform: translateY(0) scale(1);
+      }
+
+      to {
+        transform: translateY(-18px) scale(1.04);
+      }
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 92px 0;
+    }
+
+    .glass {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .nav-shell {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding-top: 18px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 14px 20px;
+      border-radius: 999px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      position: relative;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      transform: scaleX(1);
+    }
+
+    .hero {
+      min-height: calc(100vh - 100px);
+      display: flex;
+      align-items: center;
+      padding: 86px 0 60px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .eyebrow,
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #dcf6ff;
+      font-size: 0.92rem;
+    }
+
+    .eyebrow {
+      margin-bottom: 22px;
+    }
+
+    .kicker {
+      margin-bottom: 16px;
+    }
+
+    .eyebrow::before,
+    .kicker::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: var(--glow);
+    }
+
+    .hero-name {
+      font-size: clamp(3.2rem, 7vw, 6.2rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      margin-bottom: 12px;
+    }
+
+    .hero-name span {
+      background: linear-gradient(135deg, #ffffff 10%, var(--accent) 45%, #d8b4fe 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-title {
+      font-size: 1.12rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .typing-line {
+      min-height: 34px;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 650px;
+    }
+
+    .hero-tagline {
+      margin-bottom: 10px;
+    }
+
+    .hero-description {
+      margin-bottom: 28px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+      transform: translateX(-120%);
+      transition: 0.5s ease;
+    }
+
+    .btn:hover::before {
+      transform: translateX(120%);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.26);
+    }
+
+    .btn-primary {
+      color: #05101c;
+      background: linear-gradient(135deg, var(--accent), #d9f6ff);
+    }
+
+    .btn-secondary,
+    .btn-card {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.14);
+    }
+
+    .hero-panel,
+    .about-card,
+    .feature-banner,
+    .edu-card,
+    .skill-group,
+    .project-card,
+    .featured-card,
+    .contact-card {
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+    }
+
+    .hero-panel {
+      padding: 28px;
+    }
+
+    .hero-panel-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .stat,
+    .mini {
+      padding: 18px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: 0.3s ease;
+    }
+
+    .stat:hover,
+    .mini:hover,
+    .project-card:hover,
+    .featured-card:hover,
+    .contact-item:hover {
+      transform: translateY(-4px);
+      border-color: rgba(125, 211, 252, 0.28);
+      box-shadow: var(--glow);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.7rem;
+      margin-bottom: 6px;
+    }
+
+    .stat span,
+    .mini span,
+    .section-subtitle,
+    .about-card p,
+    .edu-card p,
+    .card-body p,
+    .contact-card p,
+    .contact-note li {
+      color: var(--muted);
+    }
+
+    .mini strong {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    .panel-stack {
+      display: grid;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .section-head {
+      margin-bottom: 36px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 2.4vw + 1rem, 3.1rem);
+      line-height: 1.06;
+      margin-bottom: 12px;
+      letter-spacing: -0.03em;
+    }
+
+    .section-subtitle {
+      max-width: 760px;
+    }
+    .about-card,
+    .feature-banner,
+    .contact-card,
+    .skill-group,
+    .edu-card {
+      padding: 30px;
+    }
+
+    .education-grid,
+    .featured-grid,
+    .projects-grid,
+    .skills-grid,
+    .contact-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .education-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .featured-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-bottom: 28px;
+    }
+
+    .projects-grid,
+    .skills-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contact-grid {
+      grid-template-columns: 0.95fr 1.05fr;
+    }
+
+    .featured-card,
+    .project-card {
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(10, 16, 33, 0.82));
+      transition: 0.35s ease;
+    }
+
+    .card-image {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #0d1529;
+      position: relative;
+    }
+
+    .card-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(4, 8, 18, 0.42), transparent 58%);
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .featured-card:hover .card-image img,
+    .project-card:hover .card-image img {
+      transform: scale(1.08);
+    }
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 22px;
+      height: 100%;
+    }
+
+    .badge-row,
+    .skill-pills,
+    .contact-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .badge,
+    .skill-pills span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      color: #def3ff;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .btn-card {
+      width: 100%;
+      margin-top: auto;
+      color: var(--text);
+    }
+
+    .skill-group h3 {
+      margin-bottom: 16px;
+      font-size: 1.15rem;
+    }
+
+    .skill-group h3 span {
+      color: var(--accent);
+      margin-right: 10px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 4px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: 0.25s ease;
+    }
+
+    .contact-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(125, 211, 252, 0.2), rgba(167, 139, 250, 0.22));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      flex-shrink: 0;
+    }
+
+    .contact-note {
+      display: grid;
+      gap: 16px;
+    }
+
+    .contact-note strong {
+      font-size: 1.15rem;
+    }
+
+    .contact-note ul {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-note li {
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .contact-note li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    }
+
+    footer {
+      padding: 26px 0 52px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    @media (max-width: 1060px) {
+      .hero-grid,
+      .featured-grid,
+      .projects-grid,
+      .skills-grid,
+      .contact-grid,
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .section {
+        padding: 78px 0;
+      }
+
+      .nav-shell {
+        padding-top: 12px;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 28px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 66px;
+      }
+
+      .hero-name {
+        font-size: clamp(2.8rem, 15vw, 4.2rem);
+      }
+
+      .hero-panel,
+      .about-card,
+      .feature-banner,
+      .contact-card,
+      .skill-group,
+      .edu-card,
+      .card-body {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .hero-panel-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -56,24 +670,51 @@
         <div class="eyebrow">Premium Engineering Portfolio</div>
         <h1 class="hero-name"><span>Avinash R</span></h1>
         <p class="hero-title">EEE Undergraduate | Robotics &amp; Embedded Systems Developer</p>
-        <div class="typing-line"><span id="typing-text"></span><span>|</span></div>
-        <p class="hero-tagline">Passionate about building intelligent systems combining electronics, software, and mechanical design.</p>
-        <p class="hero-desc">I build practical engineering solutions ranging from autonomous robots and embedded systems to product-focused prototypes with real-world value.</p>
+        <div class="typing-line">
+          <span id="typing-text"></span>
+          <span>|</span>
+        </div>
+        <p class="hero-tagline">
+          Passionate about building intelligent systems combining electronics, software, and mechanical design.
+        </p>
+        <p class="hero-description">
+          I build practical engineering solutions ranging from autonomous robots and embedded systems to
+          product-focused prototypes with real-world value.
+        </p>
         <div class="actions">
           <a class="btn btn-primary" href="#projects">View Projects</a>
           <!-- EDIT: Replace resume.pdf with your actual resume file -->
-          <a class="btn btn-secondary" href="resume.pdf" target="_blank" rel="noreferrer">Download Resume</a>
+          <a class="btn btn-secondary" href="resume.pdf" target="_blank" rel="noreferrer">
+            Download Resume
+          </a>
         </div>
       </div>
+
       <div class="hero-panel glass reveal">
         <div class="hero-panel-grid">
-          <div class="stat"><strong>2nd Year</strong><span>BE EEE at SSN College of Engineering</span></div>
-          <div class="stat"><strong>11+</strong><span>Engineering and product-focused projects</span></div>
-          <div class="mini"><strong>Core Focus</strong><span>Robotics, embedded systems, control systems, and product design</span></div>
-          <div class="mini"><strong>Hands-On Builder</strong><span>Scooters, robots, PCB work, automation systems, and prototypes</span></div>
+          <div class="stat">
+            <strong>2nd Year</strong>
+            <span>BE EEE at SSN College of Engineering</span>
+          </div>
+          <div class="stat">
+            <strong>11+</strong>
+            <span>Engineering and product-focused projects</span>
+          </div>
+          <div class="mini">
+            <strong>Core Focus</strong>
+            <span>Robotics, embedded systems, control systems, and product design</span>
+          </div>
+          <div class="mini">
+            <strong>Hands-On Builder</strong>
+            <span>Scooters, robots, PCB work, automation systems, and prototypes</span>
+          </div>
         </div>
+
         <div class="panel-stack">
-          <div class="mini"><strong>What I Build</strong><span>I design and build intelligent systems combining electronics, code, and mechanical design.</span></div>
+          <div class="mini">
+            <strong>What I Build</strong>
+            <span>I design and build intelligent systems combining electronics, code, and mechanical design.</span>
+          </div>
         </div>
       </div>
     </div>
@@ -87,9 +728,21 @@
             <div class="kicker">About Me</div>
             <h2 class="section-title">Building at the intersection of hardware and software</h2>
           </div>
-          <p>I am a second-year Electrical and Electronics Engineering student at SSN College of Engineering, passionate about building intelligent systems at the intersection of hardware and software.</p>
-          <p>From developing autonomous robots to designing embedded systems, working on PCB-based solutions, and building a foldable electric scooter, I enjoy turning ideas into real engineering products that are both functional and practical.</p>
-          <p>I am especially interested in robotics, embedded systems, and product design. I enjoy learning by building, solving problems hands-on, and exploring how electronics, programming, and mechanical design can come together to create impactful solutions.</p>
+
+          <p>
+            I am a second-year Electrical and Electronics Engineering student at SSN College of Engineering,
+            passionate about building intelligent systems at the intersection of hardware and software.
+          </p>
+          <p>
+            From developing autonomous robots to designing embedded systems, working on PCB-based solutions,
+            and building a foldable electric scooter, I enjoy turning ideas into real engineering products
+            that are both functional and practical.
+          </p>
+          <p>
+            I am especially interested in robotics, embedded systems, and product design. I enjoy learning by
+            building, solving problems hands-on, and exploring how electronics, programming, and mechanical
+            design can come together to create impactful solutions.
+          </p>
         </div>
       </div>
     </section>
@@ -99,7 +752,9 @@
         <div class="feature-banner glass reveal">
           <div class="kicker">What I Build</div>
           <h2 class="section-title">Intelligent systems with practical engineering impact</h2>
-          <p class="section-sub">I design and build intelligent systems combining electronics, code, and mechanical design.</p>
+          <p class="section-subtitle">
+            I design and build intelligent systems combining electronics, code, and mechanical design.
+          </p>
         </div>
       </div>
     </section>
@@ -109,14 +764,19 @@
         <div class="section-head reveal">
           <div class="kicker">Education</div>
           <h2 class="section-title">Academic background</h2>
-          <p class="section-sub">A strong academic foundation supporting my work in electronics, robotics, embedded systems, and product development.</p>
+          <p class="section-subtitle">
+            A strong academic foundation supporting my work in electronics, robotics, embedded systems, and
+            product development.
+          </p>
         </div>
+
         <div class="education-grid">
           <article class="edu-card glass reveal">
             <h3>SSN College of Engineering</h3>
             <p>Bachelor of Engineering (EEE)</p>
             <p>2024 - Present</p>
           </article>
+
           <article class="edu-card glass reveal">
             <h3>PSBB Millennium School, Gerugambakkam</h3>
             <p>Class 12</p>
@@ -125,79 +785,423 @@
         </div>
       </div>
     </section>
-
     <section id="projects" class="section">
       <div class="container">
         <div class="section-head reveal">
           <div class="kicker">Featured Projects</div>
           <h2 class="section-title">Engineering builds that move from idea to execution</h2>
-          <p class="section-sub">High-quality placeholder images are used for now. Replace each image with your actual project photo for the strongest final result.</p>
+          <p class="section-subtitle">
+            High-quality placeholder images are used for now. Replace each image with your actual project
+            photo for the strongest final result.
+          </p>
         </div>
+
         <div class="featured-grid">
           <article class="featured-card glass reveal">
-            <div class="card-image"><!-- Replace this image with your real project photo --><img src="https://via.placeholder.com/600x400?text=Foldable+Electric+Scooter" alt="Foldable Electric Scooter" /></div>
-            <div class="card-body"><h3>Foldable Electric Scooter</h3><p>Designed and developed a compact foldable electric scooter with motor control, structural integration, and multi-mode acceleration for a practical mobility-focused build.</p><div class="badge-row"><span class="badge">Motor Control</span><span class="badge">Product Design</span><span class="badge">Mechanical Build</span></div></div>
+            <div class="card-image">
+              <!-- Replace this image with your real project photo -->
+              <img src="https://via.placeholder.com/600x400?text=Foldable+Electric+Scooter" alt="Foldable Electric Scooter" />
+            </div>
+            <div class="card-body">
+              <h3>Foldable Electric Scooter</h3>
+              <p>
+                Designed and developed a compact foldable electric scooter with motor control, structural
+                integration, and multi-mode acceleration for a practical mobility-focused build.
+              </p>
+              <div class="badge-row">
+                <span class="badge">Motor Control</span>
+                <span class="badge">Product Design</span>
+                <span class="badge">Mechanical Build</span>
+              </div>
+            </div>
           </article>
+
           <article class="featured-card glass reveal">
-            <div class="card-image"><!-- Replace this image with your real project photo --><img src="https://via.placeholder.com/600x400?text=Maze+Solver+Robot" alt="Maze Solver Robot" /></div>
-            <div class="card-body"><h3>Maze Solver Robot</h3><p>Engineered an autonomous maze-solving robot using the flood fill algorithm to compute efficient paths and navigate complex layouts with reliable decision-making.</p><div class="badge-row"><span class="badge">Flood Fill</span><span class="badge">Autonomous Navigation</span><span class="badge">Robotics</span></div></div>
+            <div class="card-image">
+              <!-- Replace this image with your real project photo -->
+              <img src="https://via.placeholder.com/600x400?text=Maze+Solver+Robot" alt="Maze Solver Robot" />
+            </div>
+            <div class="card-body">
+              <h3>Maze Solver Robot</h3>
+              <p>
+                Engineered an autonomous maze-solving robot using the flood fill algorithm to compute efficient
+                paths and navigate complex layouts with reliable decision-making.
+              </p>
+              <div class="badge-row">
+                <span class="badge">Flood Fill</span>
+                <span class="badge">Autonomous Navigation</span>
+                <span class="badge">Robotics</span>
+              </div>
+            </div>
           </article>
+
           <article class="featured-card glass reveal">
-            <div class="card-image"><!-- Replace this image with your real project photo --><img src="https://via.placeholder.com/600x400?text=Line+Follower+Robot" alt="Line Follower Robot" /></div>
-            <div class="card-body"><h3>Line Follower Robot</h3><p>Engineered an autonomous line-following robot using ESP32, IR sensors, and PID control to achieve stable, high-precision path tracking on dynamic routes.</p><div class="badge-row"><span class="badge">ESP32</span><span class="badge">IR Sensors</span><span class="badge">PID Control</span></div></div>
+            <div class="card-image">
+              <!-- Replace this image with your real project photo -->
+              <img src="https://via.placeholder.com/600x400?text=Line+Follower+Robot" alt="Line Follower Robot" />
+            </div>
+            <div class="card-body">
+              <h3>Line Follower Robot</h3>
+              <p>
+                Engineered an autonomous line-following robot using ESP32, IR sensors, and PID control to
+                achieve stable, high-precision path tracking on dynamic routes.
+              </p>
+              <div class="badge-row">
+                <span class="badge">ESP32</span>
+                <span class="badge">IR Sensors</span>
+                <span class="badge">PID Control</span>
+              </div>
+            </div>
           </article>
         </div>
 
         <div class="section-head reveal">
           <div class="kicker">All Projects</div>
           <h2 class="section-title">Project Showcase</h2>
-          <p class="section-sub">Beautiful cards, consistent spacing, image hover zoom, and editable content in one file.</p>
+          <p class="section-subtitle">
+            Beautiful cards, consistent spacing, image hover zoom, and editable content in one file.
+          </p>
         </div>
+
         <div class="projects-grid">
-          <article class="project-card glass reveal"><div class="card-image"><!-- Replace this image with your real project photo --><img src="https://via.placeholder.com/600x400?text=Line+Follower+Robot" alt="Line Follower Robot" /></div><div class="card-body"><h3>Line Follower Robot</h3><p>Built using ESP32 and IR sensors with PID-based control, this robot delivers accurate and smooth path tracking with improved stability during turns.</p><div class="badge-row"><span class="badge">ESP32</span><span class="badge">IR Sensors</span><span class="badge">PID</span></div><a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a></div></article>
-          <article class="project-card glass reveal"><div class="card-image"><!-- Replace this image with your real project photo --><img src="https://via.placeholder.com/600x400?text=Maze+Solver+Robot" alt="Maze Solver Robot" /></div><div class="card-body"><h3>Maze Solver Robot</h3><p>Implemented flood fill based maze navigation to create a robot capable of analyzing paths, selecting efficient routes, and solving structured mazes autonomously.</p><div class="badge-row"><span class="badge">Flood Fill</span><span class="badge">Robotics</span><span class="badge">Control Logic</span></div><a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a></div></article>
-          <article class="project-card glass reveal"><div class="card-image"><!-- Replace this image with your real project photo --><img src="https://via.placeholder.com/600x400?text=Foldable+Electric+Scooter" alt="Foldable Electric Scooter" /></div><div class="card-body"><h3>Foldable Electric Scooter</h3><p>Developed a compact electric scooter concept with foldable mechanical design, controlled acceleration, and a strong product-oriented engineering approach.</p><div class="badge-row"><span class="badge">Mechanical Design</span><span class="badge">Motor Control</span><span class="badge">Product Build</span></div><a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a></div></article>
-          <article class="project-card glass reveal"><div class="card-image"><!-- Replace this image with your real project photo --><img src="https://via.placeholder.com/600x400?text=Voice+Controlled+Wheeler" alt="Voice Controlled 3-Way Segmented Wheeler" /></div><div class="card-body"><h3>Voice Controlled 3-Way Segmented Wheeler</h3><p>Built a direction-responsive robotic platform capable of segmented movement through voice command inputs, combining motion control with intuitive interaction.</p><div class="badge-row"><span class="badge">Voice Control</span><span class="badge">Robotics</span><span class="badge">Motion System</span></div><a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a></div></article>
-          <article class="project-card glass reveal"><div class="card-image"><!-- Replace this image with your real project photo --><img src="https://via.placeholder.com/600x400?text=Volume+Level+Indicator" alt="Volume Level Indicator" /></div><div class="card-body"><h3>Volume Level Indicator</h3><p>Designed an electronic circuit that visualizes audio intensity through LED output, creating a simple and effective hardware-based signal monitoring solution.</p><div class="badge-row"><span class="badge">Analog Electronics</span><span class="badge">LED Indicators</span><span class="badge">Circuit Design</span></div><a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a></div></article>
-          <article class="project-card glass reveal"><div class="card-image"><!-- Replace this image with your real project photo --><img src="https://via.placeholder.com/600x400?text=Smart+Home+Pass+System" alt="Smart Home Pass System" /></div><div class="card-body"><h3>Smart Home Pass System</h3><p>Developed a secure hostel outpass system with approval workflow and tracking, improving visibility, control, and user convenience in a real institutional setting.</p><div class="badge-row"><span class="badge">System Design</span><span class="badge">Workflow Logic</span><span class="badge">Tracking</span></div><a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a></div></article>
-          <article class="project-card glass reveal"><div class="card-image"><!-- Replace this image with your real project photo --><img src="https://via.placeholder.com/600x400?text=Home+Automation+System" alt="Home Automation System" /></div><div class="card-body"><h3>Home Automation System</h3><p>Created a remote-control electrical automation system that enables smarter device operation using embedded control and practical home-focused engineering.</p><div class="badge-row"><span class="badge">Automation</span><span class="badge">Embedded Systems</span><span class="badge">IoT Concepts</span></div><a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a></div></article>
-          <article class="project-card glass reveal"><div class="card-image"><!-- Replace this image with your real project photo --><img src="https://via.placeholder.com/600x400?text=Water+Level+Indicator" alt="Water Level Indicator" /></div><div class="card-body"><h3>Water Level Indicator (BJT Based)</h3><p>Built a BJT-based water level detection system for automatic monitoring and control, focusing on simple, reliable, and cost-effective circuit implementation.</p><div class="badge-row"><span class="badge">BJT Circuit</span><span class="badge">Water Monitoring</span><span class="badge">Control System</span></div><a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a></div></article>
-          <article class="project-card glass reveal"><div class="card-image"><!-- Replace this image with your real project photo --><img src="https://via.placeholder.com/600x400?text=E-Yantra+Crop+Drop+Bot" alt="E-Yantra Crop Drop Bot" /></div><div class="card-body"><h3>E-Yantra Crop Drop Bot</h3><p>Developed an autonomous crop drop robot for precision task execution, combining robotic control, navigation logic, and reliable task handling.</p><div class="badge-row"><span class="badge">E-Yantra</span><span class="badge">Autonomous Robot</span><span class="badge">Precision Tasks</span></div><a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a></div></article>
-          <article class="project-card glass reveal"><div class="card-image"><!-- Replace this image with your real project photo --><img src="https://via.placeholder.com/600x400?text=Pharma+Website" alt="Pharma Website" /></div><div class="card-body"><h3>Pharma Website</h3><p>Designed and developed a clean, professional website for a pharmaceutical company with a strong focus on clarity, trust, and modern presentation.</p><div class="badge-row"><span class="badge">Web Design</span><span class="badge">HTML</span><span class="badge">CSS</span></div><a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a></div></article>
-          <article class="project-card glass reveal"><div class="card-image"><!-- Replace this image with your real project photo --><img src="https://via.placeholder.com/600x400?text=Smart+Fire+Exit+System" alt="Smart Fire Exit Evacuation System" /></div><div class="card-body"><h3>Smart Fire Exit Evacuation System</h3><p>Conceptualized a system to guide people safely during emergencies by improving fire exit response and enabling more informed evacuation support.</p><div class="badge-row"><span class="badge">Safety System</span><span class="badge">Embedded Concepts</span><span class="badge">Emergency Guidance</span></div><a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a></div></article>
+          <article class="project-card glass reveal">
+            <div class="card-image">
+              <!-- Replace this image with your real project photo -->
+              <img src="https://via.placeholder.com/600x400?text=Line+Follower+Robot" alt="Line Follower Robot" />
+            </div>
+            <div class="card-body">
+              <h3>Line Follower Robot</h3>
+              <p>
+                Built using ESP32 and IR sensors with PID-based control, this robot delivers accurate and
+                smooth path tracking with improved stability during turns.
+              </p>
+              <div class="badge-row">
+                <span class="badge">ESP32</span>
+                <span class="badge">IR Sensors</span>
+                <span class="badge">PID</span>
+              </div>
+              <a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal">
+            <div class="card-image">
+              <!-- Replace this image with your real project photo -->
+              <img src="https://via.placeholder.com/600x400?text=Maze+Solver+Robot" alt="Maze Solver Robot" />
+            </div>
+            <div class="card-body">
+              <h3>Maze Solver Robot</h3>
+              <p>
+                Implemented flood fill based maze navigation to create a robot capable of analyzing paths,
+                selecting efficient routes, and solving structured mazes autonomously.
+              </p>
+              <div class="badge-row">
+                <span class="badge">Flood Fill</span>
+                <span class="badge">Robotics</span>
+                <span class="badge">Control Logic</span>
+              </div>
+              <a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal">
+            <div class="card-image">
+              <!-- Replace this image with your real project photo -->
+              <img src="https://via.placeholder.com/600x400?text=Foldable+Electric+Scooter" alt="Foldable Electric Scooter" />
+            </div>
+            <div class="card-body">
+              <h3>Foldable Electric Scooter</h3>
+              <p>
+                Developed a compact electric scooter concept with foldable mechanical design, controlled
+                acceleration, and a strong product-oriented engineering approach.
+              </p>
+              <div class="badge-row">
+                <span class="badge">Mechanical Design</span>
+                <span class="badge">Motor Control</span>
+                <span class="badge">Product Build</span>
+              </div>
+              <a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal">
+            <div class="card-image">
+              <!-- Replace this image with your real project photo -->
+              <img src="https://via.placeholder.com/600x400?text=Voice+Controlled+Wheeler" alt="Voice Controlled 3-Way Segmented Wheeler" />
+            </div>
+            <div class="card-body">
+              <h3>Voice Controlled 3-Way Segmented Wheeler</h3>
+              <p>
+                Built a direction-responsive robotic platform capable of segmented movement through voice
+                command inputs, combining motion control with intuitive interaction.
+              </p>
+              <div class="badge-row">
+                <span class="badge">Voice Control</span>
+                <span class="badge">Robotics</span>
+                <span class="badge">Motion System</span>
+              </div>
+              <a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal">
+            <div class="card-image">
+              <!-- Replace this image with your real project photo -->
+              <img src="https://via.placeholder.com/600x400?text=Volume+Level+Indicator" alt="Volume Level Indicator" />
+            </div>
+            <div class="card-body">
+              <h3>Volume Level Indicator</h3>
+              <p>
+                Designed an electronic circuit that visualizes audio intensity through LED output, creating a
+                simple and effective hardware-based signal monitoring solution.
+              </p>
+              <div class="badge-row">
+                <span class="badge">Analog Electronics</span>
+                <span class="badge">LED Indicators</span>
+                <span class="badge">Circuit Design</span>
+              </div>
+              <a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal">
+            <div class="card-image">
+              <!-- Replace this image with your real project photo -->
+              <img src="https://via.placeholder.com/600x400?text=Smart+Home+Pass+System" alt="Smart Home Pass System" />
+            </div>
+            <div class="card-body">
+              <h3>Smart Home Pass System</h3>
+              <p>
+                Developed a secure hostel outpass system with approval workflow and tracking, improving
+                visibility, control, and user convenience in a real institutional setting.
+              </p>
+              <div class="badge-row">
+                <span class="badge">System Design</span>
+                <span class="badge">Workflow Logic</span>
+                <span class="badge">Tracking</span>
+              </div>
+              <a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal">
+            <div class="card-image">
+              <!-- Replace this image with your real project photo -->
+              <img src="https://via.placeholder.com/600x400?text=Home+Automation+System" alt="Home Automation System" />
+            </div>
+            <div class="card-body">
+              <h3>Home Automation System</h3>
+              <p>
+                Created a remote-control electrical automation system that enables smarter device operation
+                using embedded control and practical home-focused engineering.
+              </p>
+              <div class="badge-row">
+                <span class="badge">Automation</span>
+                <span class="badge">Embedded Systems</span>
+                <span class="badge">IoT Concepts</span>
+              </div>
+              <a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal">
+            <div class="card-image">
+              <!-- Replace this image with your real project photo -->
+              <img src="https://via.placeholder.com/600x400?text=Water+Level+Indicator" alt="Water Level Indicator" />
+            </div>
+            <div class="card-body">
+              <h3>Water Level Indicator (BJT Based)</h3>
+              <p>
+                Built a BJT-based water level detection system for automatic monitoring and control, focusing
+                on simple, reliable, and cost-effective circuit implementation.
+              </p>
+              <div class="badge-row">
+                <span class="badge">BJT Circuit</span>
+                <span class="badge">Water Monitoring</span>
+                <span class="badge">Control System</span>
+              </div>
+              <a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal">
+            <div class="card-image">
+              <!-- Replace this image with your real project photo -->
+              <img src="https://via.placeholder.com/600x400?text=E-Yantra+Crop+Drop+Bot" alt="E-Yantra Crop Drop Bot" />
+            </div>
+            <div class="card-body">
+              <h3>E-Yantra Crop Drop Bot</h3>
+              <p>
+                Developed an autonomous crop drop robot for precision task execution, combining robotic
+                control, navigation logic, and reliable task handling.
+              </p>
+              <div class="badge-row">
+                <span class="badge">E-Yantra</span>
+                <span class="badge">Autonomous Robot</span>
+                <span class="badge">Precision Tasks</span>
+              </div>
+              <a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal">
+            <div class="card-image">
+              <!-- Replace this image with your real project photo -->
+              <img src="https://via.placeholder.com/600x400?text=Pharma+Website" alt="Pharma Website" />
+            </div>
+            <div class="card-body">
+              <h3>Pharma Website</h3>
+              <p>
+                Designed and developed a clean, professional website for a pharmaceutical company with a
+                strong focus on clarity, trust, and modern presentation.
+              </p>
+              <div class="badge-row">
+                <span class="badge">Web Design</span>
+                <span class="badge">HTML</span>
+                <span class="badge">CSS</span>
+              </div>
+              <a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal">
+            <div class="card-image">
+              <!-- Replace this image with your real project photo -->
+              <img src="https://via.placeholder.com/600x400?text=Smart+Fire+Exit+System" alt="Smart Fire Exit Evacuation System" />
+            </div>
+            <div class="card-body">
+              <h3>Smart Fire Exit Evacuation System</h3>
+              <p>
+                Conceptualized a system to guide people safely during emergencies by improving fire exit
+                response and enabling more informed evacuation support.
+              </p>
+              <div class="badge-row">
+                <span class="badge">Safety System</span>
+                <span class="badge">Embedded Concepts</span>
+                <span class="badge">Emergency Guidance</span>
+              </div>
+              <a class="btn btn-card" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="skills" class="section">
       <div class="container">
-        <div class="section-head reveal"><div class="kicker">Skills</div><h2 class="section-title">Tools, technical strengths, and engineering foundations</h2><p class="section-sub">Structured into clean categories so the section feels premium, professional, and easy to maintain.</p></div>
+        <div class="section-head reveal">
+          <div class="kicker">Skills</div>
+          <h2 class="section-title">Tools, technical strengths, and engineering foundations</h2>
+          <p class="section-subtitle">
+            Structured into clean categories so the section feels premium, professional, and easy to maintain.
+          </p>
+        </div>
+
         <div class="skills-grid">
-          <article class="skill-group glass reveal"><h3><span>01</span>Software Tools</h3><div class="skill-pills"><span>Fusion 360</span><span>MATLAB</span><span>CoppeliaSim</span><span>STM Cube IDE</span><span>Arduino IDE</span><span>VS Code</span><span>ChatGPT</span><span>Claude</span><span>KiCad</span><span>AutoCAD</span><span>LTSpice</span><span>Keil uVision</span></div></article>
-          <article class="skill-group glass reveal"><h3><span>02</span>Technical Skills</h3><div class="skill-pills"><span>PCB Designing</span><span>3D Designing</span><span>3D Printing</span><span>Robotics</span><span>Soldering</span><span>Welding</span><span>Coding</span></div></article>
-          <article class="skill-group glass reveal"><h3><span>03</span>Microcontrollers / Processors</h3><div class="skill-pills"><span>Arduino UNO</span><span>8085</span><span>8051</span><span>ESP32</span><span>STM Blue Pill</span><span>STM Nucleo Board</span></div></article>
-          <article class="skill-group glass reveal"><h3><span>04</span>Programming</h3><div class="skill-pills"><span>C++</span><span>Python</span><span>Embedded C</span><span>Assembly Language</span></div></article>
-          <article class="skill-group glass reveal"><h3><span>05</span>Algorithms</h3><div class="skill-pills"><span>PID Control</span><span>LSRB</span><span>Flood Fill</span></div></article>
+          <article class="skill-group glass reveal">
+            <h3><span>01</span>Software Tools</h3>
+            <div class="skill-pills">
+              <span>Fusion 360</span>
+              <span>MATLAB</span>
+              <span>CoppeliaSim</span>
+              <span>STM Cube IDE</span>
+              <span>Arduino IDE</span>
+              <span>VS Code</span>
+              <span>ChatGPT</span>
+              <span>Claude</span>
+              <span>KiCad</span>
+              <span>AutoCAD</span>
+              <span>LTSpice</span>
+              <span>Keil uVision</span>
+            </div>
+          </article>
+
+          <article class="skill-group glass reveal">
+            <h3><span>02</span>Technical Skills</h3>
+            <div class="skill-pills">
+              <span>PCB Designing</span>
+              <span>3D Designing</span>
+              <span>3D Printing</span>
+              <span>Robotics</span>
+              <span>Soldering</span>
+              <span>Welding</span>
+              <span>Coding</span>
+            </div>
+          </article>
+
+          <article class="skill-group glass reveal">
+            <h3><span>03</span>Microcontrollers / Processors</h3>
+            <div class="skill-pills">
+              <span>Arduino UNO</span>
+              <span>8085</span>
+              <span>8051</span>
+              <span>ESP32</span>
+              <span>STM Blue Pill</span>
+              <span>STM Nucleo Board</span>
+            </div>
+          </article>
+
+          <article class="skill-group glass reveal">
+            <h3><span>04</span>Programming</h3>
+            <div class="skill-pills">
+              <span>C++</span>
+              <span>Python</span>
+              <span>Embedded C</span>
+              <span>Assembly Language</span>
+            </div>
+          </article>
+
+          <article class="skill-group glass reveal">
+            <h3><span>05</span>Algorithms</h3>
+            <div class="skill-pills">
+              <span>PID Control</span>
+              <span>LSRB</span>
+              <span>Flood Fill</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="contact" class="section">
       <div class="container">
-        <div class="section-head reveal"><div class="kicker">Contact</div><h2 class="section-title">Let�s build something impactful</h2><p class="section-sub">Reach out for collaborations, internships, engineering discussions, or product-focused opportunities.</p></div>
+        <div class="section-head reveal">
+          <div class="kicker">Contact</div>
+          <h2 class="section-title">Let's build something impactful</h2>
+          <p class="section-subtitle">
+            Reach out for collaborations, internships, engineering discussions, or product-focused opportunities.
+          </p>
+        </div>
+
         <div class="contact-grid">
           <div class="contact-card glass reveal">
             <div class="contact-list">
-              <a class="contact-item" href="mailto:avinash2410032@ssn.edu.in"><span class="contact-icon">?</span><span>avinash2410032@ssn.edu.in</span></a>
-              <a class="contact-item" href="tel:9150864113"><span class="contact-icon">?</span><span>9150864113</span></a>
-              <a class="contact-item" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer"><span class="contact-icon">?</span><span>github.com/AvinashR-2006</span></a>
-              <a class="contact-item" href="https://www.linkedin.com/in/avinashey" target="_blank" rel="noreferrer"><span class="contact-icon">in</span><span>linkedin.com/in/avinashey</span></a>
+              <a class="contact-item" href="mailto:avinash2410032@ssn.edu.in">
+                <span class="contact-icon">✉</span>
+                <span>avinash2410032@ssn.edu.in</span>
+              </a>
+              <a class="contact-item" href="tel:9150864113">
+                <span class="contact-icon">☎</span>
+                <span>9150864113</span>
+              </a>
+              <a class="contact-item" href="https://github.com/AvinashR-2006" target="_blank" rel="noreferrer">
+                <span class="contact-icon">⌘</span>
+                <span>github.com/AvinashR-2006</span>
+              </a>
+              <a class="contact-item" href="https://www.linkedin.com/in/avinashey" target="_blank" rel="noreferrer">
+                <span class="contact-icon">in</span>
+                <span>linkedin.com/in/avinashey</span>
+              </a>
             </div>
           </div>
+
           <div class="contact-card glass reveal">
             <div class="contact-note">
               <strong>Open to engineering opportunities</strong>
-              <p>I enjoy working on robotics, embedded products, hardware-software integration, and real-world systems that move from concept to prototype.</p>
+              <p>
+                I enjoy working on robotics, embedded products, hardware-software integration, and real-world
+                systems that move from concept to prototype.
+              </p>
               <ul>
                 <li>Available for project collaborations and internships</li>
                 <li>Interested in robotics, embedded systems, and product design roles</li>
@@ -211,43 +1215,79 @@
   </main>
 
   <footer>
-    <div class="container"><p>Built by Avinash R</p></div>
+    <div class="container">
+      <p>Built by Avinash R</p>
+    </div>
   </footer>
 
   <script>
-    const roles=["Robotics Engineer","Embedded Developer","Builder"];
-    const typing=document.getElementById("typing-text");
-    let roleIndex=0,charIndex=0,deleting=false;
-    function typeEffect(){
-      const current=roles[roleIndex];
-      if(!deleting){typing.textContent=current.slice(0,charIndex+1);charIndex++;if(charIndex===current.length){deleting=true;setTimeout(typeEffect,1200);return;}}
-      else{typing.textContent=current.slice(0,charIndex-1);charIndex--;if(charIndex===0){deleting=false;roleIndex=(roleIndex+1)%roles.length;}}
-      setTimeout(typeEffect,deleting?50:85);
+    const roles = ["Robotics Engineer", "Embedded Developer", "Builder"];
+    const typing = document.getElementById("typing-text");
+    let roleIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function typeEffect() {
+      const current = roles[roleIndex];
+
+      if (!deleting) {
+        typing.textContent = current.slice(0, charIndex + 1);
+        charIndex += 1;
+
+        if (charIndex === current.length) {
+          deleting = true;
+          setTimeout(typeEffect, 1200);
+          return;
+        }
+      } else {
+        typing.textContent = current.slice(0, charIndex - 1);
+        charIndex -= 1;
+
+        if (charIndex === 0) {
+          deleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+        }
+      }
+
+      setTimeout(typeEffect, deleting ? 50 : 85);
     }
+
     typeEffect();
 
-    const sections=document.querySelectorAll("section[id], header[id]");
-    const navLinks=document.querySelectorAll(".nav-links a");
-    function setActiveLink(){
-      const y=window.pageYOffset;
-      sections.forEach((section)=>{
-        const h=section.offsetHeight;
-        const top=section.offsetTop-140;
-        const id=section.getAttribute("id");
-        if(y>=top&&y<top+h){
-          navLinks.forEach((link)=>link.classList.remove("active"));
-          const active=document.querySelector('.nav-links a[href="#'+id+'"]');
-          if(active) active.classList.add("active");
+    const sections = document.querySelectorAll("section[id], header[id]");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    function setActiveLink() {
+      const scrollY = window.pageYOffset;
+
+      sections.forEach((section) => {
+        const height = section.offsetHeight;
+        const top = section.offsetTop - 140;
+        const id = section.getAttribute("id");
+
+        if (scrollY >= top && scrollY < top + height) {
+          navLinks.forEach((link) => link.classList.remove("active"));
+          const active = document.querySelector('.nav-links a[href="#' + id + '"]');
+          if (active) active.classList.add("active");
         }
       });
     }
-    window.addEventListener("scroll",setActiveLink);
+
+    window.addEventListener("scroll", setActiveLink);
     setActiveLink();
 
-    const observer=new IntersectionObserver((entries)=>{
-      entries.forEach((entry)=>{if(entry.isIntersecting) entry.target.classList.add("visible");});
-    },{threshold:.15});
-    document.querySelectorAll(".reveal").forEach((el)=>observer.observe(el));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
   </script>
 </body>
 </html>
