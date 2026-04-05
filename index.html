@@ -645,26 +645,36 @@
       }
 
       .nav-shell {
-        padding-top: 12px;
+        padding-top: 8px;
       }
 
       .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        border-radius: 28px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 20px;
+        padding: 10px 14px;
+        gap: 10px;
       }
 
       .nav-links {
-        gap: 12px;
+        gap: 8px 12px;
+        justify-content: flex-end;
+        font-size: 0.84rem;
       }
 
       .hero {
         min-height: auto;
-        padding-top: 66px;
+        padding-top: 52px;
       }
 
       .hero-name {
         font-size: clamp(2.8rem, 15vw, 4.2rem);
+      }
+
+      .brand {
+        font-size: 0.78rem;
+        letter-spacing: 0.05em;
       }
 
       .hero-panel,
@@ -680,6 +690,27 @@
 
       .hero-panel-grid {
         grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .navbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        width: 100%;
+        gap: 8px;
+        justify-content: flex-start;
+      }
+
+      .nav-links a {
+        font-size: 0.8rem;
+      }
+
+      .hero {
+        padding-top: 44px;
       }
     }
   </style>
